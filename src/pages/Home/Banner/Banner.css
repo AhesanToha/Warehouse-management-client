@@ -1,0 +1,24 @@
+.banner {
+  position: relative;
+}
+.banner img {
+  width: 100%;
+}
+.banner-title {
+    font-size: 36px;
+    font-weight: 600;
+  color: aqua;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  text-transform: uppercase;
+}
+.banner-title:hover {
+  text-shadow: 2px 3px 6px rgba(161, 238, 238, 0.89);
+}
+
+@media only screen and (max-width: 576px) {
+  .banner-title{
+      font-size: 0.8em;
+  }
+}

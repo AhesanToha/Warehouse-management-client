@@ -1,0 +1,55 @@
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: rgb(65, 30, 112);
+}
+nav {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-link {
+  display: flex;
+}
+
+nav a {
+  font-weight: 600;
+  text-decoration: none;
+  margin-right: 25px;
+  color: rgb(185, 236, 236);
+}
+nav a:hover {
+  color: aqua;
+}
+
+@media only screen and (max-width: 576px) {
+  nav {
+    display: block;
+    height: auto;
+  }
+  nav img {
+    height: 30px;
+    margin-right: 0;
+    margin: 0 auto;
+    display: block;
+
+  }
+
+  .nav-link {
+    display: flex;
+    justify-content: center;
+  }
+
+  nav a {
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 12px;
+  }
+  .signout {
+    margin-top: 4px;
+  }
+}
