@@ -1,8 +1,8 @@
 header {
   position: sticky;
   top: 0;
+  background-color: #1d1d1d;
   z-index: 1;
-  background-color: rgb(65, 30, 112);
 }
 nav {
   height: 70px;
@@ -36,7 +36,6 @@ nav a:hover {
     margin-right: 0;
     margin: 0 auto;
     display: block;
-
   }
 
   .nav-link {
