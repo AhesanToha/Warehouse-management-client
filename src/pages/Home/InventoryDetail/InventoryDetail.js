@@ -21,13 +21,14 @@ const InventoryDetail = () => {
       const remaining = parseFloat(quantity) - 1;
       const newInventory = {
         name,
-        _id,
         price,
         img,
         quantity: remaining,
         supplierName,
         description,
       };
+      setInventory(newInventory);
+
       fetch(`http://localhost:5000/inventory/${detailId}`, {
         method: "PUT",
         body: JSON.stringify(newInventory),
@@ -39,7 +40,6 @@ const InventoryDetail = () => {
         .then((data) => {
           toast("Successfully Delivered");
         });
-      setInventory(newInventory);
     } else {
       toast.warn("Already out of stock");
     }
@@ -52,7 +52,7 @@ const InventoryDetail = () => {
       </div>
       <div className="detail-info">
         <h3>Name: {name}</h3>
-        <h5>ID: {_id}</h5>
+        <h5>ID: {detailId}</h5>
         <h5>
           Price: $
           <strong style={{ color: "rgb(66, 206, 244)" }}> {price}</strong>
