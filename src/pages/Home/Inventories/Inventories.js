@@ -13,7 +13,7 @@ const Inventories = () => {
     <div className="inventories container">
       <h1>INVENTORIES : {inventories.length}</h1>
       <div className="inventory-product">
-        {inventories.map((inventory) => (
+        {inventories.slice(0, 6).map((inventory) => (
           <Inventory key={inventory._id} inventory={inventory}></Inventory>
         ))}
       </div>

@@ -1,0 +1,21 @@
+.detail-container {
+  height: auto;
+  border: 2px solid red;
+  display: flex;
+}
+
+.detail-container img {
+  width: 300px;
+  padding: 10px;
+}
+.detail-info {
+  margin: 20px;
+}
+.detail-info button {
+  padding: 10px 50px;
+  font-size: 1.2em;
+  font-weight: 600;
+  border-radius: 30px;
+  background-color: rgb(129, 129, 107);
+  color: aliceblue;
+}
