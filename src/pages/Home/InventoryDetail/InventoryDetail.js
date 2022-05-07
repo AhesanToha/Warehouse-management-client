@@ -45,24 +45,55 @@ const InventoryDetail = () => {
     }
   };
 
+  const handleRestock = (e) => {
+    e.preventDefault();
+    const restockUpdate = e.target.quantityField.value;
+    const updatedQuantity =
+      parseFloat(restockUpdate) + parseFloat(inventory.quantity);
+    const newInventory = {
+      img,
+      name,
+      price,
+      quantity: updatedQuantity,
+      description,
+      supplierName,
+    };
+    setInventory(newInventory);
+    e.target.value.reset();
+  };
+
   return (
-    <div className="container detail-container">
-      <div>
-        <img src={img} alt="" />
+    <>
+      <div className="container detail-container">
+        <div>
+          <img src={img} alt="" />
+        </div>
+        <div className="detail-info">
+          <h3>Name: {name}</h3>
+          <h5>ID: {detailId}</h5>
+          <h5>
+            Price: $
+            <strong style={{ color: "rgb(66, 206, 244)" }}> {price}</strong>
+          </h5>
+          <h5>Quantity: {quantity}</h5>
+          <h5>Supplier: {supplierName}</h5>
+          <p>Description: {description}</p>
+          <button onClick={handleQuantity}>Delivered</button>
+        </div>
       </div>
-      <div className="detail-info">
-        <h3>Name: {name}</h3>
-        <h5>ID: {detailId}</h5>
-        <h5>
-          Price: $
-          <strong style={{ color: "rgb(66, 206, 244)" }}> {price}</strong>
-        </h5>
-        <h5>Quantity: {quantity}</h5>
-        <h5>Supplier: {supplierName}</h5>
-        <p>Description: {description}</p>
-        <button onClick={handleQuantity}>Delivered</button>
+      <div className="container restock-container pb-3">
+        <h2>Restock Item</h2>
+        <form onSubmit={handleRestock}>
+          <input
+            className="restock-quantity"
+            type="number"
+            name="quantityField"
+            required
+          />
+          <input className="restock-button" type="submit" value="Restock" />
+        </form>
       </div>
-    </div>
+    </>
   );
 };
 
