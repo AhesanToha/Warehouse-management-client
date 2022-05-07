@@ -48,6 +48,10 @@ const InventoryDetail = () => {
   const handleRestock = (e) => {
     e.preventDefault();
     const restockUpdate = e.target.quantityField.value;
+    if (restockUpdate < 1) {
+      alert("Please add at least 1 item");
+      return;
+    }
     const updatedQuantity =
       parseFloat(restockUpdate) + parseFloat(inventory.quantity);
     const newInventory = {
@@ -59,7 +63,18 @@ const InventoryDetail = () => {
       supplierName,
     };
     setInventory(newInventory);
-    e.target.value.reset();
+    fetch(`http://localhost:5000/inventory/${detailId}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newInventory),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        e.target.reset();
+        toast("Stock added successfully");
+      });
   };
 
   return (
