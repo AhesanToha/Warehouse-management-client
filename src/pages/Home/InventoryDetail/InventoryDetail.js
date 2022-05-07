@@ -53,7 +53,10 @@ const InventoryDetail = () => {
       <div className="detail-info">
         <h3>Name: {name}</h3>
         <h5>ID: {_id}</h5>
-        <h5>Price: {price}</h5>
+        <h5>
+          Price: $
+          <strong style={{ color: "rgb(66, 206, 244)" }}> {price}</strong>
+        </h5>
         <h5>Quantity: {quantity}</h5>
         <h5>Supplier: {supplierName}</h5>
         <p>Description: {description}</p>

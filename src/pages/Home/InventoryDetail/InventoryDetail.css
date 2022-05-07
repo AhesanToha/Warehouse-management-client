@@ -1,7 +1,10 @@
 .detail-container {
+  margin: 30px auto;
   height: auto;
-  border: 2px solid red;
   display: flex;
+  box-shadow: 0px 2px 7px -4px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 0px 2px 7px -4px rgba(66, 68, 90, 1);
+  box-shadow: 0px 2px 11px -4px rgb(224, 225, 231);
 }
 
 .detail-container img {
@@ -18,4 +21,22 @@
   border-radius: 30px;
   background-color: rgb(129, 129, 107);
   color: aliceblue;
+}
+
+@media only screen and (max-width: 576px) {
+  .detail-container {
+    line-height: auto;
+    display: grid;
+    width: 95%;
+    text-align: center;
+  }
+  .detail-container img {
+    width: 95%;
+  }
+  .detail-container h3 {
+    font-size: 1.2em;
+  }
+  .detail-container h5 {
+    font-size: 01em;
+  }
 }
