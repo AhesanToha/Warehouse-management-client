@@ -10,7 +10,7 @@ const InventoryDetail = () => {
     inventory;
 
   useEffect(() => {
-    const url = `http://localhost:5000/inventory/${detailId}`;
+    const url = `https://manage4578.herokuapp.com/inventory/${detailId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setInventory(data));
@@ -29,7 +29,7 @@ const InventoryDetail = () => {
       };
       setInventory(newInventory);
 
-      fetch(`http://localhost:5000/inventory/${detailId}`, {
+      fetch(`https://manage4578.herokuapp.com/inventory/${detailId}`, {
         method: "PUT",
         body: JSON.stringify(newInventory),
         headers: {
@@ -63,7 +63,7 @@ const InventoryDetail = () => {
       supplierName,
     };
     setInventory(newInventory);
-    fetch(`http://localhost:5000/inventory/${detailId}`, {
+    fetch(`https://manage4578.herokuapp.com/inventory/${detailId}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

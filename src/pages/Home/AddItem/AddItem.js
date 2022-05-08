@@ -20,7 +20,7 @@ const AddItem = () => {
       img: e.target.img.value,
     };
 
-    fetch(`http://localhost:5000/addItem`, {
+    fetch(`https://manage4578.herokuapp.com/addItem`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

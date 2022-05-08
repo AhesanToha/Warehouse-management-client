@@ -9,7 +9,7 @@ const Manage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5000/inventory")
+    fetch("https://manage4578.herokuapp.com/inventory")
       .then((res) => res.json())
       .then((data) => setInventory(data));
   }, []);
@@ -21,7 +21,7 @@ const Manage = () => {
   const deleteItem = (id) => {
     const proceed = window.confirm("Are You Sure");
     if (proceed) {
-      fetch(`http://localhost:5000/inventory/${id}`, {
+      fetch(`https://manage4578.herokuapp.com/inventory/${id}`, {
         method: "DELETE",
       })
         .then((response) => response.json(id))
