@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Inventory from "../Inventory/Inventory";
 import "./Inventories.css";
 
@@ -19,6 +20,9 @@ const Inventories = () => {
           <Inventory key={inventory._id} inventory={inventory}></Inventory>
         ))}
       </div>
+      <Link to="/manage">
+        <button className="manage-button">MANAGE INVENTORY</button>
+      </Link>
     </div>
   );
 };

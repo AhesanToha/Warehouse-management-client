@@ -1,0 +1,44 @@
+.blog-container {
+  margin-bottom: 200px;
+}
+
+.single-container {
+  display: flex;
+  max-width: 80%;
+  margin: 0 auto;
+  box-shadow: 0 3px 8px rgba(236, 200, 100, 0.829);
+}
+
+.single {
+  margin: 10px 5px;
+  width: 100%;
+  height: auto;
+}
+
+.vs {
+  padding: 20px;
+}
+
+@media only screen and (max-width: 576px) {
+  .blog-container {
+    width: 100%;
+  }
+  .single-container {
+    max-width: 100%;
+  }
+  .about-container {
+    max-width: 97%;
+  }
+  .single h2 {
+    font-size: 1em;
+  }
+  .single p {
+    font-size: 0.7em;
+  }
+  .vs {
+    padding: 10px;
+  }
+  .about img {
+    height: 100px;
+  }
+}

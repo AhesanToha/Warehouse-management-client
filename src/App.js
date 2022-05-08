@@ -12,6 +12,7 @@ import Login from "./pages/Home/Login/Login";
 import Register from "./pages/Home/Register/Register";
 import RequireAuth from "./pages/shared/RequireAuth/RequireAuth";
 import NotFound from "./pages/shared/NotFound/NotFound";
+import Blogs from "./pages/Home/Blogs/Blogs";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer
