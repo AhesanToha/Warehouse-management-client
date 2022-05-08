@@ -1,0 +1,23 @@
+.divided-border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.divided-border p {
+  padding: 0 10px;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+  border: 2px solid orange;
+  border-radius: 5px;
+}
+
+.divided-border div {
+  height: 1px;
+  width: 40%;
+  border: 1px solid orange;
+}

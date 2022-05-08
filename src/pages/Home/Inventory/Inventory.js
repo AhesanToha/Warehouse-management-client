@@ -13,18 +13,18 @@ const Inventory = ({ inventory }) => {
   return (
     <div className="inventory">
       <img className="w-100" src={img} alt="" />
-      <h5>{name}</h5>
-      <h6>
+      <h5 className="text-2xl font-semibold">{name}</h5>
+      <h6 className="text-xl">
         Price: $ <strong>{price}</strong>
       </h6>
       <p>
         supplier: <strong>{supplierName}</strong>
       </p>
-      <p>
+      <p className="text-md">
         Quantity: <strong>{quantity}</strong>
       </p>
-      <h6>
-        <small>{description}</small>
+      <h6 className="text-md font-bold">
+        <small>Description: {description}</small>
       </h6>
       <button onClick={() => handleNavigate(_id)}>Update</button>
     </div>

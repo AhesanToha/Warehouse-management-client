@@ -84,14 +84,18 @@ const InventoryDetail = () => {
           <img src={img} alt="" />
         </div>
         <div className="detail-info">
-          <h3>Name: {name}</h3>
+          <h3 className="text-3xl font-semibold mb-2">Name: {name}</h3>
           <h5>ID: {detailId}</h5>
-          <h5>
+          <h5 className="text-xl ">
             Price: $
             <strong style={{ color: "rgb(66, 206, 244)" }}> {price}</strong>
           </h5>
-          <h5>Quantity: {quantity}</h5>
-          <h5>Supplier: {supplierName}</h5>
+          <h5 className="text-xl  mb-2">
+            Quantity: <strong>{quantity}</strong>
+          </h5>
+          <h5 className="text-md mb-2">
+            Supplier: <strong>{supplierName}</strong>
+          </h5>
           <p>Description: {description}</p>
           <button onClick={handleQuantity}>Delivered</button>
         </div>
@@ -100,7 +104,8 @@ const InventoryDetail = () => {
         <h2>Restock Item</h2>
         <form onSubmit={handleRestock}>
           <input
-            className="restock-quantity"
+            placeholder="Add"
+            className="restock-quantity text-black"
             type="number"
             name="quantityField"
             required

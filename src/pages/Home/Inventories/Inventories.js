@@ -10,8 +10,10 @@ const Inventories = () => {
       .then((data) => setInventories(data));
   }, []);
   return (
-    <div className="inventories container">
-      <h1>INVENTORIES : {inventories.length}</h1>
+    <div className="inventories container mb-10">
+      <h1 className="text-4xl font-bold my-4">
+        INVENTORIES : {inventories.length}
+      </h1>
       <div className="inventory-product">
         {inventories.slice(0, 6).map((inventory) => (
           <Inventory key={inventory._id} inventory={inventory}></Inventory>

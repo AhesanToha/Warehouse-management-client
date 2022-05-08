@@ -1,29 +1,40 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import auth from "../../../firebase.init";
 import logo from "../../../images/logo.png";
 import "./Header.css";
 
 const Header = () => {
+  const [user] = useAuthState(auth);
+
+  const handleSignOut = () => {
+    signOut(auth);
+  };
+
   return (
     <header>
-      <nav className="header container">
+      <nav className=" container">
         <div>
           <Link to={"/"}>
-            <img height={40} src={logo} alt="" />
+            <img className="align-middle" src={logo} alt="" />
           </Link>
         </div>
 
         <div className="nav-link">
           <Link to="/home">HOME</Link>
           <Link to="/blogs">BLOGS</Link>
+          <Link to="/manage">MANAGE</Link>
+          <Link to="/addItem">ADD</Link>
           <Link to="/about">ABOUT ME</Link>
-          {/*  {user ? (
+          {user ? (
             <Link to={"/"} onClick={handleSignOut} className="signout">
               SIGN OUT
             </Link>
           ) : (
             <Link to="/login">LOGIN</Link>
-          )} */}
+          )}
         </div>
       </nav>
     </header>

@@ -6,6 +6,10 @@ import Home from "./pages/Home/Home/Home";
 import InventoryDetail from "./pages/Home/InventoryDetail/InventoryDetail";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Manage from "./pages/Home/Manage/Manage";
+import AddItem from "./pages/Home/AddItem/AddItem";
+import Login from "./pages/Home/Login/Login";
+import Register from "./pages/Home/Register/Register";
 
 function App() {
   return (
@@ -18,6 +22,10 @@ function App() {
           path="/inventoryDetail/:detailId"
           element={<InventoryDetail></InventoryDetail>}
         ></Route>
+        <Route path="/manage" element={<Manage></Manage>}></Route>
+        <Route path="/addItem" element={<AddItem></AddItem>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/register" element={<Register></Register>}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer

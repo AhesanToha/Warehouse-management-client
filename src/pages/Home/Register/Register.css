@@ -1,0 +1,32 @@
+.register-container {
+  width: 450px;
+  text-align: center;
+  margin: 20px auto;
+  box-shadow: 0 3px 8px rgba(164, 199, 231, 0.829);
+  border-radius: 10px;
+}
+
+/* .register-container:hover {
+    box-shadow: 0 5px 15px rgba(164, 199, 231, 0.829);
+    transition: box-shadow 0.2s ease-in-out;
+  }
+   */
+.register-container input {
+  width: 90%;
+  padding: 10px 10px;
+  font-size: 20px;
+  margin: 5px;
+  border: 2px solid orange;
+  background: rgba(90, 88, 88, 0.479);
+  border-radius: 7px;
+  color: orange;
+}
+
+@media only screen and (max-width: 576px) {
+  .register-container {
+    width: 80%;
+  }
+  .register-container input {
+    width: 95%;
+  }
+}

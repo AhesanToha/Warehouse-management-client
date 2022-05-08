@@ -4,11 +4,17 @@ header {
   background-color: rgb(65, 62, 62); /* #1d1d1d; */
   z-index: 1;
 }
+
 nav {
   height: 70px;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+nav img {
+  height: 40px;
+  display: grid;
   align-items: center;
 }
 

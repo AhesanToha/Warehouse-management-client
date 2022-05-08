@@ -8,7 +8,7 @@ const Banner = () => {
       <img src={banner} alt="" />
       <div className="banner-title">
         <p>Here you can find all kinds of laptop</p>
-        <p>let's visit out House</p>
+        <p>let's visit our House</p>
       </div>
     </div>
   );
