@@ -30,6 +30,7 @@ const AddItem = () => {
       .then((res) => res.json())
       .then((data) => {
         toast("Item Added Successfully");
+        e.target.reset();
       });
   };
   return (
