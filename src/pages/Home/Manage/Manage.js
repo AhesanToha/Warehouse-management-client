@@ -14,11 +14,11 @@ const Manage = () => {
       .then((data) => setInventory(data));
   }, []);
 
-  const updatetock = (id) => {
+  const updateStock = (id) => {
     navigate(`/inventoryDetail/${id}`);
   };
 
-  const deletitem = (id) => {
+  const deleteItem = (id) => {
     const proceed = window.confirm("Are You Sure");
     if (proceed) {
       fetch(`http://localhost:5000/inventory/${id}`, {
@@ -56,7 +56,7 @@ const Manage = () => {
 
       {inventory ? (
         <>
-          <div className=" hidden md:block md:flex flex-col md:w-3/4 mx-auto border text-left">
+          <div className=" hidden md:block  flex-col md:w-3/4 mx-auto border text-left">
             <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
               <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                 <div className="overflow-hidden">
@@ -109,14 +109,14 @@ const Manage = () => {
                             <div className="flex">
                               <button
                                 onClick={() => {
-                                  updatetock(item?._id);
+                                  updateStock(item?._id);
                                 }}
                                 className="border border-indigo-600 p-2 mx-2"
                               >
                                 Update Stock
                               </button>
                               <button
-                                onClick={() => deletitem(item?._id)}
+                                onClick={() => deleteItem(item?._id)}
                                 className="border border-red-600 p-2"
                               >
                                 Delete
@@ -141,15 +141,15 @@ const Manage = () => {
                 <div className="flex py-2 justify-center">
                   <button
                     onClick={() => {
-                      updatetock(item?._id);
+                      updateStock(item?._id);
                     }}
                     className="border border-indigo-600 p-1 mx-2"
                   >
                     Update Stock
                   </button>
                   <button
-                    onClick={() => deletitem(item?._id)}
-                    className="border border-red-600 p-1"
+                    onClick={() => deleteItem(item?._id)}
+                    className="border manage-delete border-red-600 p-1"
                   >
                     Delete
                   </button>

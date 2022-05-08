@@ -10,6 +10,8 @@ import Manage from "./pages/Home/Manage/Manage";
 import AddItem from "./pages/Home/AddItem/AddItem";
 import Login from "./pages/Home/Login/Login";
 import Register from "./pages/Home/Register/Register";
+import RequireAuth from "./pages/shared/RequireAuth/RequireAuth";
+import NotFound from "./pages/shared/NotFound/NotFound";
 
 function App() {
   return (
@@ -20,12 +22,31 @@ function App() {
         <Route path="/home" element={<Home></Home>}></Route>
         <Route
           path="/inventoryDetail/:detailId"
-          element={<InventoryDetail></InventoryDetail>}
+          element={
+            <RequireAuth>
+              <InventoryDetail></InventoryDetail>
+            </RequireAuth>
+          }
         ></Route>
-        <Route path="/manage" element={<Manage></Manage>}></Route>
-        <Route path="/addItem" element={<AddItem></AddItem>}></Route>
+        <Route
+          path="/manage"
+          element={
+            <RequireAuth>
+              <Manage></Manage>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/addItem"
+          element={
+            <RequireAuth>
+              <AddItem></AddItem>
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer

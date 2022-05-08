@@ -1,20 +1,22 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import auth from "../../../firebase.init";
 import "./AddItem.css";
 
 const AddItem = () => {
-  let user;
+  const [user] = useAuthState(auth);
 
-  const additem = (e) => {
+  const addItem = (e) => {
     e.preventDefault();
-    const item = {
+    const newItem = {
       email: user?.email,
       name: e.target.name.value,
       price: e.target.price.value,
       description: e.target.description.value,
       quantity: e.target.quantity.value,
-      suppliername: e.target.suppliername.value,
+      supplierName: e.target.suppliername.value,
       img: e.target.img.value,
     };
 
@@ -23,7 +25,7 @@ const AddItem = () => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(item),
+      body: JSON.stringify(newItem),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -36,7 +38,7 @@ const AddItem = () => {
         ADD ITEM <small className="text-sm">by giving info bellow</small>
       </h2>
 
-      <form onSubmit={additem} className="md:w-2/4 mx-auto p-2 mb-10 ">
+      <form onSubmit={addItem} className="md:w-2/4 mx-auto p-2 mb-10 ">
         <div className="form-group mb-6">
           <input
             type="text"
@@ -150,7 +152,7 @@ const AddItem = () => {
           py-1.5
           text-base
           font-normal
-          text-gray-700
+          text-gray-500
           bg-gray-800  bg-clip-padding
           border border-solid border-gray-300
           rounded

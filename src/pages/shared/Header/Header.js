@@ -24,9 +24,14 @@ const Header = () => {
 
         <div className="nav-link">
           <Link to="/home">HOME</Link>
-          <Link to="/blogs">BLOGS</Link>
-          <Link to="/manage">MANAGE</Link>
-          <Link to="/addItem">ADD</Link>
+          {user && (
+            <>
+              {" "}
+              <Link to="/blogs">BLOGS</Link>
+              <Link to="/manage">MANAGE</Link>
+              <Link to="/addItem">ADD</Link>
+            </>
+          )}
           <Link to="/about">ABOUT ME</Link>
           {user ? (
             <Link to={"/"} onClick={handleSignOut} className="signout">
