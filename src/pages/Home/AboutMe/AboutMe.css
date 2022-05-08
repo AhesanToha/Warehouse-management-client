@@ -1,0 +1,20 @@
+.about img {
+  margin: 0 auto;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 0 1px 8px rgba(164, 199, 231, 0.829);
+}
+.hero {
+  color: rgb(255, 104, 104);
+}
+.about-container {
+  display: flex;
+  max-width: 50%;
+  margin: 0 auto;
+  box-shadow: 0 3px 8px rgba(164, 199, 231, 0.829);
+}
+.about {
+  margin: 10px auto;
+  text-align: center;
+  margin-bottom: 50px;
+}
